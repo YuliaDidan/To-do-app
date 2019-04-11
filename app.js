@@ -163,7 +163,7 @@ app.post('/removetaskcompleted', jsonParser, (req, res) => {
     res.redirect('/');
 });
 
-app.get('/', (req, res) => {    
+app.get('/', (req, res) => {
     // res.render('index.html', {tasks: tasks, comletetasks: comletetasks});
     Task.find({}, (err, tasks) => {
         if(err) console.log(err);
@@ -177,6 +177,7 @@ app.get('/', (req, res) => {
         }SVGAnimateTransformElement
     }); 
 });
+
 const port = process.env.PORT || 3000
 app.listen(port, () => {
     console.log("App listening on port 3000!");

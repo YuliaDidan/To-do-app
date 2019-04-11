@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Dan-IT study project",
   "main": "app.js",
-  "scripts": {
-    "start": "nodemon app.js"
+
+  "scripts": {    
+    "start":"node ./node_modules/app.js"
   },
   "author": "Yulia Didan",
   "license": "ISC",
@@ -18,3 +19,4 @@
     "nodemon": "^1.18.10"
   }
 }
+
