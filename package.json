@@ -1,0 +1,20 @@
+{
+  "name": "todo-app-project",
+  "version": "1.0.0",
+  "description": "Dan-IT study project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Yulia Didan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.22",
+    "nunjucks": "^3.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

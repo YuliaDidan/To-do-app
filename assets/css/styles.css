@@ -1,0 +1,151 @@
+.header {
+    background-color: #CCE5FF;
+    padding: 15px 0;
+}
+
+button,
+button:active,
+button:checked,
+button:focus,
+button:hover,
+input,
+input:active,
+input:focus {
+    outline: none !important;
+    outline-offset: none !important;
+    box-shadow: none !important;
+    border: 1px solid #007bff;
+}
+
+.list-group-item-input {
+    border: none !important;
+    width: 59%;
+    
+}
+
+.todo li {
+    margin: 0 0 10px 0;    
+}
+
+.list-group-item-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo li:last-of-type {
+    margin-bottom: 0 !important;
+}
+
+.buttons {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;             
+}
+
+ul.todo#completed li .buttons {
+    width: 20%;
+}
+.cross {
+    font-size: 15px;
+}
+
+.badge {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.todo#completed li .buttons button.complete {
+    border: none;
+    background-color: #007bff !important;
+    
+} 
+
+ul.todo#completed li .buttons button.complete .complete-icon {
+    color: #ffff !important;
+}
+
+ul.todo:not(#completed) li .buttons button.complete:hover,
+ul.todo:not(#completed) li .buttons button.save:hover {
+    background-color: #007bff !important;
+} 
+
+
+ul.todo:not(#completed) li .buttons button.complete:hover .complete-icon,
+ul.todo:not(#completed) li .buttons button.save:hover .save-icon {
+    color: #ffff;
+}
+
+.complete,
+.remove,
+.remove-completed,
+.save {  
+    width: 30px;
+    height: 25px;    
+    cursor: pointer;
+    border: 1px solid #007bff;     
+    background-color: #ffff !important;
+    transition: background-color, 
+                0.2s ease;
+}
+
+.remove:hover,
+.remove-completed:hover {
+    background-color: #007bff !important;
+    border: 1px solid #007bff;
+}
+
+.remove:hover .remove-icon{
+    color:  red !important;
+}
+
+.remove-completed:hover .remove-icon{
+    color:  red !important;
+}
+
+.remove-icon,
+.complete-icon,
+.save-icon {        
+    display: block;    
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    transition: color, 0.2s ease;
+    color: #007bff;          
+}
+
+ul.todo#todo {
+    padding: 30px 0;
+    position: relative;
+}
+
+ul.todo#completed {
+    padding: 30px 0;
+    position: relative;
+}
+
+.line {
+    display: block;
+    width: 150px;
+    text-align: center;
+    border-top: 1px solid #dBe5e0;
+    margin: 0 auto;
+}
+
+.todo-nothing-statement,
+.yet-statement {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.none {
+    display: none;
+}
+
+
+
+
