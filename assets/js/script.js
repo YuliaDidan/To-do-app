@@ -21,7 +21,9 @@ document.getElementById("button-addon2").addEventListener("click", () => {
             request.open("POST", "/addtask", true);               
             request.setRequestHeader("Content-Type", "application/json");    
             request.addEventListener("load", function () {          
-            window.location.href = "http://localhost:3000/";
+            // window.location.href = "http://localhost:3000/";
+            // }, false);
+            window.location.href = "/";
             }, false);
             request.send(task);             
 
@@ -47,7 +49,8 @@ ulTodo.addEventListener('click', (event) => {
             request.open("POST", "/completetask", true);               
             request.setRequestHeader("Content-Type", "application/json");
             request.addEventListener("load", function () {          
-            window.location.href = "http://localhost:3000/";
+            // window.location.href = "http://localhost:3000/";
+            window.location.href = "/";
             }, false);
 
             request.send(task);
@@ -63,7 +66,8 @@ ulTodo.addEventListener('click', (event) => {
             request.open("POST", "/removetasktodo", true);               
             request.setRequestHeader("Content-Type", "application/json"); 
             request.addEventListener("load", function () {          
-            window.location.href = "http://localhost:3000/";
+            // window.location.href = "http://localhost:3000/";
+            window.location.href = "/";
             }, false); 
         
             // request.send(task);
@@ -79,7 +83,8 @@ ulTodo.addEventListener('click', (event) => {
                     request.open("POST", "/savetask", true);               
                     request.setRequestHeader("Content-Type", "application/json");
                     request.addEventListener("load", function () {          
-                    window.location.href = "http://localhost:3000/";
+                    // window.location.href = "http://localhost:3000/";
+                    window.location.href = "/";
                     }, false);
 
                     request.send(task);
@@ -103,7 +108,8 @@ ulTodoCompleted.addEventListener('click', (event) => {
             request.open("POST", "/addtaskback", true);               
             request.setRequestHeader("Content-Type", "application/json"); 
             request.addEventListener("load", function () {          
-            window.location.href = "http://localhost:3000/";
+            // window.location.href = "http://localhost:3000/";
+            window.location.href = "/";
             }, false);
     
         request.send(taskAgain);
@@ -119,7 +125,8 @@ ulTodoCompleted.addEventListener('click', (event) => {
             request.open("POST", "/removetaskcompleted", true);               
             request.setRequestHeader("Content-Type", "application/json"); 
             request.addEventListener("load", function () {          
-            window.location.href = "http://localhost:3000/";
+            // window.location.href = "http://localhost:3000/";
+            window.location.href = "/";
             }, false); 
 
         // request.send(taskAgain);
