@@ -34,12 +34,14 @@ ulTodo.addEventListener('click', (event) => {
     let buttonRemove = event.target.closest('.remove');
     let buttonSave = event.target.closest('.save');
     
-    if(buttonToCompleted) {               
+    if(buttonToCompleted) {
+        console.log(event.target);               
         let tasksFieldForm = document.forms['tasks-field-form'];
         let taskValue = tasksFieldForm.elements.task.value; 
         let taskId = tasksFieldForm.elements.task.id;           
         let task = JSON.stringify({taskValue: taskValue, taskId: taskId });
-        // let taskid = JSON.stringify({taskId: taskId});             
+        // let taskid = JSON.stringify({taskId: taskId});  
+        console.log(task)           
 
         let request = new XMLHttpRequest();        
             request.open("POST", "/completetask", true);               

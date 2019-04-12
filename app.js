@@ -65,19 +65,31 @@ app.post('/completetask', jsonParser, (req, res) => {
        name: req.body.taskValue
     });
     
-    CompleteTask.create(completetask, (err, CompleteTask) => {
+    // await CompleteTask.create(completetask, (err, CompleteTask) => {
+    //     if(err) console.log(err);
+    //     else {
+    //         Task.findByIdAndDelete(TaskId, (err) => {
+    //             if(err) console.log(err);
+    //         else {
+    //             console.log("Inserted completetask!" + " " + completetask  + "Deleted Task!" + " " + TaskId);                                
+    //         }
+    //       })            
+    //     }
+    // });
+
+    Task.findByIdAndDelete(TaskId, (err) => {
         if(err) console.log(err);
-        else {
-            Task.findByIdAndDelete(TaskId, (err) => {
-                if(err) console.log(err);
             else {
-                console.log("Inserted completetask!" + " " + completetask  + "Deleted Task!" + " " + TaskId);                                
+                CompleteTask.create(completetask, (err, CompleteTask) => {
+                if(err) console.log(err);
+                    else {
+                        console.log("Inserted completetask!" + " " + completetask  + "Deleted Task!" + " " + TaskId);                                
+                    }
+                })            
             }
-          })            
-        }
-    });
+        });
     
-    res.redirect('/');
+        res.redirect('/');
     
 });
 
@@ -101,7 +113,7 @@ app.post('/savetask', jsonParser, (req, res) => {
     
 });
 
-app.post('/addtaskback', jsonParser, (req, res) => {
+app.post('/addtaskback', jsonParser,  (req, res) => {
     if(!req.body) return res.sendStatus(400);
     res.setHeader("Content-Type", "text/html");
     // let newTask = req.body.taskValueCompleted;    
@@ -112,10 +124,10 @@ app.post('/addtaskback', jsonParser, (req, res) => {
         name: req.body.taskValueCompleted
      });
 
-     Task.create(newTask, (err, Task)=>{
+      Task.create(newTask, (err, Task)=>{
         if(err) console.log(err);
         else {
-            CompleteTask.findByIdAndDelete(TaskIdCompleted, (err) => {
+           CompleteTask.findByIdAndDelete(TaskIdCompleted, (err) => {
             if(err) console.log(err);
                 else {
                     console.log("Inserted Task!" + " " + newTask  + "Deleted Task!" + " " + TaskIdCompleted);                                
