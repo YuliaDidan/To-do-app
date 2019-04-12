@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const jsonParser = express.json();
 const mongoose = require("mongoose");
 const config = require('./db/config');
+const port = process.env.PORT || 3000
 
 
 nunjucks.configure('views', {
@@ -174,11 +175,10 @@ app.get('/', (req, res) => {
                     res.render('index.html', {tasks: tasks, completetasks: completetasks});                    
                 }
             });
-        }SVGAnimateTransformElement
+        }
     }); 
 });
 
-const port = process.env.PORT || 3000
 app.listen(port, () => {
     console.log("App listening on port 3000!");
 });

@@ -37,7 +37,7 @@ input:focus {
 }
 
 .buttons {
-    width: 30%;
+    width: 32%;
     display: flex;
     justify-content: space-between;             
 }
@@ -58,8 +58,7 @@ ul.todo#completed li .buttons {
 
 ul.todo#completed li .buttons button.complete {
     border: none;
-    background-color: #007bff !important;
-    
+    background-color: #007bff !important;   
 } 
 
 ul.todo#completed li .buttons button.complete .complete-icon {
@@ -74,7 +73,7 @@ ul.todo:not(#completed) li .buttons button.save:hover {
 
 ul.todo:not(#completed) li .buttons button.complete:hover .complete-icon,
 ul.todo:not(#completed) li .buttons button.save:hover .save-icon {
-    color: #ffff;
+    color: #ffff;    
 }
 
 .complete,
