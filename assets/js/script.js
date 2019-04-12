@@ -20,9 +20,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
     let request = new XMLHttpRequest();        
             request.open("POST", "/addtask", true);               
             request.setRequestHeader("Content-Type", "application/json");    
-            request.addEventListener("load", function () {          
-            // window.location.href = "http://localhost:3000/";
-            // }, false);
+            request.addEventListener("load", function () {  
             window.location.href = "/";
             }, false);
             request.send(task);             
@@ -48,8 +46,7 @@ ulTodo.addEventListener('click', (event) => {
         let request = new XMLHttpRequest();        
             request.open("POST", "/completetask", true);               
             request.setRequestHeader("Content-Type", "application/json");
-            request.addEventListener("load", function () {          
-            // window.location.href = "http://localhost:3000/";
+            request.addEventListener("load", function () {        
             window.location.href = "/";
             }, false);
 
@@ -66,7 +63,6 @@ ulTodo.addEventListener('click', (event) => {
             request.open("POST", "/removetasktodo", true);               
             request.setRequestHeader("Content-Type", "application/json"); 
             request.addEventListener("load", function () {          
-            // window.location.href = "http://localhost:3000/";
             window.location.href = "/";
             }, false); 
         
@@ -83,7 +79,6 @@ ulTodo.addEventListener('click', (event) => {
                     request.open("POST", "/savetask", true);               
                     request.setRequestHeader("Content-Type", "application/json");
                     request.addEventListener("load", function () {          
-                    // window.location.href = "http://localhost:3000/";
                     window.location.href = "/";
                     }, false);
 
@@ -108,7 +103,6 @@ ulTodoCompleted.addEventListener('click', (event) => {
             request.open("POST", "/addtaskback", true);               
             request.setRequestHeader("Content-Type", "application/json"); 
             request.addEventListener("load", function () {          
-            // window.location.href = "http://localhost:3000/";
             window.location.href = "/";
             }, false);
     
@@ -125,7 +119,6 @@ ulTodoCompleted.addEventListener('click', (event) => {
             request.open("POST", "/removetaskcompleted", true);               
             request.setRequestHeader("Content-Type", "application/json"); 
             request.addEventListener("load", function () {          
-            // window.location.href = "http://localhost:3000/";
             window.location.href = "/";
             }, false); 
 
