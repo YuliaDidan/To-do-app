@@ -11,8 +11,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="container">
-            {# <form action="/addtask" method = "POST" class="input-group" name="input-task-form"> #}
+        <div class="container">            
             <form class="input-group" name="input-task-form">
                 <input type="text" class="form-control" name = "newtask" value = "" placeholder="Enter an activity.." id="item" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
@@ -25,12 +24,10 @@
         <ul class="list-group todo" id="todo">
             <p class="todo-nothing-statement m-auto">You have nothing to-do</p> 
             {% for newTask in tasks %}            
-                <li class="list-group-item mb-3">                   
-                    {# <form class="list-group-item-form method" method = "POST" action = "/completetask"> #}
+                <li class="list-group-item mb-3" id = "{{newTask.id}}">            
                     <form class="list-group-item-form method" name = "tasks-field-form">
-                        <input class="list-group-item-input" id = "{{newTask.id}}" type = "text" name = "task" value ="{{newTask.name}}">                       
-                        <div class="buttons">
-                            {# <button class="badge remove" formaction = "/removetask" type = "submit"><i class="fas fa-trash-alt remove-icon"></i></button> #}
+                        <input class="list-group-item-input"  type = "text" name = "task" value ="{{newTask.name}}">                       
+                        <div class="buttons">                            
                             <button class="badge save" name = "save" type = "submit"><i class="far fa-save save-icon"></i></button>
                             <button class="badge remove" type = "submit"><i class="fas fa-trash-alt remove-icon"></i></button>
                             <button class="badge badge-primary complete to-completed" type = "submit"><i class="fas fa-check complete-icon"></i></button>
@@ -43,12 +40,10 @@
         <ul class="list-group todo" id="completed">
         <p class="yet-statement m-auto">You have yet to complete any tasks</p>
         {% for completeTask in completetasks %}
-                <li class="list-group-item mb-3">
-                    {# <form class="list-group-item-form method" method = "POST" action = "/addtaskback"> #}
-                        <form class="list-group-item-form method" name = "tasks-completed-form">
-                        <input class="list-group-item-input" id = "{{completeTask.id}}" type = "text" name = "completetask" value = "{{completeTask.name}}">
-                        <div class="buttons">
-                            {# <button class="badge remove" formaction = "/removetask" type = "submit"><i class="fas fa-trash-alt remove-icon"></i></button> #}
+                <li class="list-group-item mb-3" id = "{{completeTask.id}}">
+                    <form class="list-group-item-form method" name = "tasks-completed-form">
+                        <input class="list-group-item-input"  type = "text" name = "completetask" value = "{{completeTask.name}}">
+                        <div class="buttons">                           
                             <button class="badge remove-completed" type = "submit"><i class="fas fa-trash-alt remove-icon"></i></button>
                             <button class="badge badge-primary complete to-new" type = "submit"><i class="fas fa-check complete-icon"></i></button>
                         </div>

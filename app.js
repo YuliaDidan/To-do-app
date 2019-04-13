@@ -65,18 +65,7 @@ app.post('/completetask', jsonParser, (req, res) => {
        name: req.body.taskValue
     });
     
-    // await CompleteTask.create(completetask, (err, CompleteTask) => {
-    //     if(err) console.log(err);
-    //     else {
-    //         Task.findByIdAndDelete(TaskId, (err) => {
-    //             if(err) console.log(err);
-    //         else {
-    //             console.log("Inserted completetask!" + " " + completetask  + "Deleted Task!" + " " + TaskId);                                
-    //         }
-    //       })            
-    //     }
-    // });
-
+   
     Task.findByIdAndDelete(TaskId, (err) => {
         if(err) console.log(err);
             else {
@@ -95,13 +84,14 @@ app.post('/completetask', jsonParser, (req, res) => {
 
 app.post('/savetask', jsonParser, (req, res) => {
     if(!req.body) return res.sendStatus(400); 
-    res.setHeader("Content-Type", "text/html");     
-    let TaskId = req.body.taskId;   
+    res.setHeader("Content-Type", "text/html"); 
+    console.log(req.body); 
+    let TaskId = req.body.taskId;       
     
     Task.findById(TaskId, (err, Task) => {
         if(err) console.log(err);
         else {
-            Task.name = req.body.taskValue
+            Task.name = req.body.taskValue            
             Task.save ( (err) => {
                 if(err) console.log(err); 
                 console.log("Task saved!");                                
@@ -120,6 +110,7 @@ app.post('/addtaskback', jsonParser,  (req, res) => {
     // tasks.unshift(newTask);
     // comletetasks.splice(comletedTasks.indexOf(newTask), 1);
     let TaskIdCompleted = req.body.taskIdCompleted;
+
     let newTask = new Task({
         name: req.body.taskValueCompleted
      });

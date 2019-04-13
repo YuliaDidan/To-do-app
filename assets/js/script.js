@@ -33,16 +33,16 @@ ulTodo.addEventListener('click', (event) => {
     let buttonToCompleted = event.target.closest('.to-completed');
     let buttonRemove = event.target.closest('.remove');
     let buttonSave = event.target.closest('.save');
+    let parent = event.target.closest(".list-group-item");
+    
+
     
     if(buttonToCompleted) {
-        console.log(event.target);               
-        let tasksFieldForm = document.forms['tasks-field-form'];
-        let taskValue = tasksFieldForm.elements.task.value; 
-        let taskId = tasksFieldForm.elements.task.id;           
-        let task = JSON.stringify({taskValue: taskValue, taskId: taskId });
-        // let taskid = JSON.stringify({taskId: taskId});  
-        console.log(task)           
-
+        let taskId = parent.getAttribute('id');               
+        let taskInput = parent.querySelector("input");
+        let taskValue = taskInput.getAttribute('value');                  
+        let task = JSON.stringify({taskValue: taskValue, taskId: taskId});    
+        
         let request = new XMLHttpRequest();        
             request.open("POST", "/completetask", true);               
             request.setRequestHeader("Content-Type", "application/json");
@@ -52,12 +52,9 @@ ulTodo.addEventListener('click', (event) => {
 
             request.send(task);
 
-    } else if (buttonRemove) {        
-        let tasksFieldForm = document.forms['tasks-field-form'];
-        // let taskValue = tasksFieldForm.elements.task.value;
-        let taskId = tasksFieldForm.elements.task.id; 
-        let taskid = JSON.stringify({taskId: taskId});
-        // let task = JSON.stringify({taskValue: taskValue});
+    } else if (buttonRemove) {       
+        let taskId = parent.getAttribute('id'); 
+        let taskid = JSON.stringify({taskId: taskId});        
         
         let request = new XMLHttpRequest();        
             request.open("POST", "/removetasktodo", true);               
@@ -66,23 +63,27 @@ ulTodo.addEventListener('click', (event) => {
             window.location.href = "/";
             }, false); 
         
-            // request.send(task);
             request.send(taskid);
     
     } else if (buttonSave) {
-                let tasksFieldForm = document.forms['tasks-field-form'];
-                let taskValue = tasksFieldForm.elements.task.value; 
-                let taskId = tasksFieldForm.elements.task.id;           
-                let task = JSON.stringify({taskValue: taskValue, taskId: taskId }); 
-                
-                let request = new XMLHttpRequest();        
-                    request.open("POST", "/savetask", true);               
-                    request.setRequestHeader("Content-Type", "application/json");
-                    request.addEventListener("load", function () {          
-                    window.location.href = "/";
-                    }, false);
+        let taskId = parent.getAttribute('id');               
+        let taskInput = parent.querySelector("input");
+        let taskValue = taskInput.value;                          
+        let task1 = JSON.stringify({taskValue: taskValue, taskId: taskId});
+        console.log(task1);
+        // let tasksFieldForm = document.forms['tasks-field-form'];
+        // let taskValue = tasksFieldForm.elements.task.value; 
+        // let taskId = tasksFieldForm.elements.task.id;           
+        // let task = JSON.stringify({taskValue: taskValue, taskId: taskId }); 
+        
+        let request = new XMLHttpRequest();        
+            request.open("POST", "/savetask", true);               
+            request.setRequestHeader("Content-Type", "application/json");
+            request.addEventListener("load", function () {          
+            window.location.href = "/";
+            }, false);
 
-                    request.send(task);
+            request.send(task1);
     }
 }, false);
 
@@ -92,13 +93,15 @@ let ulTodoCompleted = document.getElementById('completed');
 ulTodoCompleted.addEventListener('click', (event) => {
     let buttonToNew = event.target.closest('.to-new');
     let buttonRemoveCompleted = event.target.closest('.remove-completed');
+    let parent = event.target.closest(".list-group-item");
 
-    if(buttonToNew) {        
-        let tasksFieldFormCompleted = document.forms['tasks-completed-form'];
-        let taskValueCompleted = tasksFieldFormCompleted.elements.completetask.value;
-        let taskIdCompleted = tasksFieldFormCompleted.elements.completetask.id;    
-        let taskAgain = JSON.stringify({taskValueCompleted: taskValueCompleted, taskIdCompleted: taskIdCompleted});   
-    
+    if(buttonToNew) {  
+        let taskIdCompleted = parent.getAttribute('id');               
+        let taskInput = parent.querySelector("input");
+        let taskValueCompleted = taskInput.getAttribute('value');                  
+        let taskAgain = JSON.stringify({taskValueCompleted: taskValueCompleted, taskIdCompleted: taskIdCompleted});      
+        console.log(taskAgain);
+         
         let request = new XMLHttpRequest();        
             request.open("POST", "/addtaskback", true);               
             request.setRequestHeader("Content-Type", "application/json"); 
@@ -108,11 +111,8 @@ ulTodoCompleted.addEventListener('click', (event) => {
     
         request.send(taskAgain);
 
-    } else if (buttonRemoveCompleted) {
-        let tasksFieldFormCompleted = document.forms['tasks-completed-form'];        
-        // let taskValueCompleted = tasksFieldFormCompleted.elements.completetask.value;
-        // let taskAgain = JSON.stringify({taskValueCompleted: taskValueCompleted});
-        let taskId = tasksFieldFormCompleted.elements.completetask.id; 
+    } else if (buttonRemoveCompleted) {        
+        let taskId = parent.getAttribute('id');      
         let taskid = JSON.stringify({taskId: taskId});
         
         let request = new XMLHttpRequest();        
@@ -122,8 +122,7 @@ ulTodoCompleted.addEventListener('click', (event) => {
             window.location.href = "/";
             }, false); 
 
-        // request.send(taskAgain);
-           request.send(taskid);
+        request.send(taskid);
     }
 });
 
