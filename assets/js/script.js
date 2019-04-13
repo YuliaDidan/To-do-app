@@ -70,11 +70,7 @@ ulTodo.addEventListener('click', (event) => {
         let taskInput = parent.querySelector("input");
         let taskValue = taskInput.value;                          
         let task1 = JSON.stringify({taskValue: taskValue, taskId: taskId});
-        console.log(task1);
-        // let tasksFieldForm = document.forms['tasks-field-form'];
-        // let taskValue = tasksFieldForm.elements.task.value; 
-        // let taskId = tasksFieldForm.elements.task.id;           
-        // let task = JSON.stringify({taskValue: taskValue, taskId: taskId }); 
+        console.log(task1);         
         
         let request = new XMLHttpRequest();        
             request.open("POST", "/savetask", true);               
