@@ -22,7 +22,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
             request.setRequestHeader("Content-Type", "application/json");    
             request.addEventListener("load", function () {  
             window.location.href = "/";
-            }, false);
+            }, true);
             request.send(task);             
 
 });
@@ -48,7 +48,7 @@ ulTodo.addEventListener('click', (event) => {
             request.setRequestHeader("Content-Type", "application/json");
             request.addEventListener("load", function () {        
             window.location.href = "/";
-            }, false);
+            }, true);
 
             request.send(task);
 
@@ -61,7 +61,7 @@ ulTodo.addEventListener('click', (event) => {
             request.setRequestHeader("Content-Type", "application/json"); 
             request.addEventListener("load", function () {          
             window.location.href = "/";
-            }, false); 
+            }, true); 
         
             request.send(taskid);
     
@@ -77,7 +77,7 @@ ulTodo.addEventListener('click', (event) => {
             request.setRequestHeader("Content-Type", "application/json");
             request.addEventListener("load", function () {          
             window.location.href = "/";
-            }, false);
+            }, true);
 
             request.send(task1);
     }
@@ -103,7 +103,7 @@ ulTodoCompleted.addEventListener('click', (event) => {
             request.setRequestHeader("Content-Type", "application/json"); 
             request.addEventListener("load", function () {          
             window.location.href = "/";
-            }, false);
+            }, true);
     
         request.send(taskAgain);
 
@@ -116,7 +116,7 @@ ulTodoCompleted.addEventListener('click', (event) => {
             request.setRequestHeader("Content-Type", "application/json"); 
             request.addEventListener("load", function () {          
             window.location.href = "/";
-            }, false); 
+            }, true); 
 
         request.send(taskid);
     }

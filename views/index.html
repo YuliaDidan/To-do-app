@@ -16,7 +16,7 @@
                 <input type="text" class="form-control" name = "newtask" value = "" placeholder="Enter an activity.." id="item" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
             </form>
-                <button class="btn btn-outline-primary" type="submit" id="button-addon2"><i class="fas fa-plus"></i></button>
+                <button class="btn btn-outline-primary" type="button" id="button-addon2"><i class="fas fa-plus"></i></button>
             </div>           
         </div>        
     </header>            
@@ -28,9 +28,9 @@
                     <form class="list-group-item-form method" name = "tasks-field-form">
                         <input class="list-group-item-input"  type = "text" name = "task" value ="{{newTask.name}}">                       
                         <div class="buttons">                            
-                            <button class="badge save" name = "save" type = "submit"><i class="far fa-save save-icon"></i></button>
-                            <button class="badge remove" type = "submit"><i class="fas fa-trash-alt remove-icon"></i></button>
-                            <button class="badge badge-primary complete to-completed" type = "submit"><i class="fas fa-check complete-icon"></i></button>
+                            <button class="badge save" name = "save" type = "button"><i class="far fa-save save-icon"></i></button>
+                            <button class="badge remove" type = "button"><i class="fas fa-trash-alt remove-icon"></i></button>
+                            <button class="badge badge-primary complete to-completed" type = "button"><i class="fas fa-check complete-icon"></i></button>
                         </div>
                     </form>                                                 
                 </li>            
@@ -44,8 +44,8 @@
                     <form class="list-group-item-form method" name = "tasks-completed-form">
                         <input class="list-group-item-input"  type = "text" name = "completetask" value = "{{completeTask.name}}">
                         <div class="buttons">                           
-                            <button class="badge remove-completed" type = "submit"><i class="fas fa-trash-alt remove-icon"></i></button>
-                            <button class="badge badge-primary complete to-new" type = "submit"><i class="fas fa-check complete-icon"></i></button>
+                            <button class="badge remove-completed" type = "button"><i class="fas fa-trash-alt remove-icon"></i></button>
+                            <button class="badge badge-primary complete to-new" type = "button"><i class="fas fa-check complete-icon"></i></button>
                         </div>
                     </form>    
                 </li>
